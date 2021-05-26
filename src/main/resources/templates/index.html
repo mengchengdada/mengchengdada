@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HEhaibin</title>
+<link  rel="stylesheet"   type="text/css"   href="/static/css/style.css">
+
+<body class="body1">
+  
+   
+
+
+
+  <div class="video" >
+    <video id="video" class="video"  controls muted  loop>
+      <source src="src/2.mp4" type="video/mp4" />
+
+    </video>
+    <div id="audio"> 
+     <button onclick="play()">声音开</button>
+      <br>
+    <button onclick="muted()">声音关</button>
+      <br>
+      <button onclick="startorstop()">播放/暂停</button>
+    </div>
+
+<script>
+  function startorstop() {
+     var play=document.getElementById("video")
+     if(play.paused)
+     {
+       play.play();
+     }
+     else {
+       play.pause();
+     }
+
+  }
+function play(){
+   var plays=document.getElementById("video");
+  plays.muted=false;
+}
+function muted(){
+  var plays=document.getElementById("video");
+  plays.play();
+  plays.muted = true;
+}
+</script>
+
+
+  </div>
+  <div>
+    
+  </div>
+  <div class="login-form">
+      <h1>请输入您的账号密码</h1>
+    <form method="post" action="/manager/IndexManagerController">
+        <div class="form-input">
+          <input   type="text" name="username" placeholder="请输入账号">
+        </div>
+        <div class="form-input">
+          <input  type="password" name="password" placeholder="请输入密码">
+        </div>
+      <div class="form-input">
+        <input type="text" name="validatecode"><img src="/empproject/validatecode">
+      </div>
+        <div class="form-input">
+          <input type="submit" name="login in" >登  录</input>
+        </div>
+    </form>
+
+    </div>
+
+  </body>
+</html>

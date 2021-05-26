@@ -1,0 +1,23 @@
+server:
+  port: 8787
+  servlet:
+    context-path: /empproject
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: a4323522
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/emp?serverTimezone=GMT&characterEncoding=utf8&useUnicode=true
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+
+
+mybatis:
+  type-aliases-package: com.qf.empproject.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
